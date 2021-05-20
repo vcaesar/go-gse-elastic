@@ -1,0 +1,88 @@
+{
+    "settings": {
+        "number_of_shards": 5,
+        "number_of_replicas": 2,
+        "analysis": {
+            "analyzer": {
+                "gse_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": ["es_synonym"]
+                }
+            },
+            "filter": {
+                "es_synonym": {
+                    "type": "synonym",
+                    "synonyms_path": "analysis/synonym.txt"
+                }
+            }
+        }
+    },
+    "mappings": {
+        "dynamic": false,
+        "properties": {
+            "city_id": {
+                "type": "long"
+            },
+            "district_id": {
+                "type": "long"
+            },
+            "house_id": {
+                "type": "long"
+            },
+            "title": {
+                "type": "keyword"
+            },
+            "title_index": {
+                "type": "text",
+                "analyzer": "gse_analyzer"
+            },
+            "describe_index": {
+                "type": "text",
+                "analyzer": "gse_analyzer"
+            },
+            "bedrooms": {
+                "type": "long"
+            },
+            "bathrooms": {
+                "type": "long"
+            },
+            "home_type": {
+                "type": "long"
+            },
+            "similar_id": {
+                "type": "long"
+            },
+            "status": {
+                "type": "boolean"
+            },
+            "lot_size": {
+                "type": "keyword"
+            },
+            "price": {
+                "type": "long"
+            },
+            "addr": {
+                "type": "keyword"
+            },
+            "addr_index": {
+                "type": "text",
+                "analyzer": "gse_analyzer"
+            },
+            "views": {
+                "type": "keyword"
+            },
+            "max_hoa": {
+                "type": "long"
+            },
+            "created_at": {
+                "type": "date",
+                "format": "dateOptionalTime"
+            },
+            "updated_at": {
+                "type": "date",
+                "format": "dateOptionalTime"
+            }
+        }
+    }
+}
