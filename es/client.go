@@ -6,6 +6,7 @@ import (
 	"fmt"
 
 	"github.com/olivere/elastic/v7"
+	"github.com/vcaesar/go-gse-elastic/nlp"
 )
 
 type Conf struct {
@@ -18,6 +19,7 @@ type Client struct {
 	Client *elastic.Client
 	Conf   *Conf
 
+	seg nlp.Segmenter
 	ctx context.Context
 }
 
