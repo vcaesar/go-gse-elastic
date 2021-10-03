@@ -8,8 +8,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: golang:1.16.3
-    working_directory: /gopath/src/github.com/vcaesar/tt
+      - image: golang:1.17.1
+    working_directory: /gopath/src/github.com/vcaesar/go-gse-elastic
     steps:
       - checkout
       # specify any bash command here prefixed with `run: `
