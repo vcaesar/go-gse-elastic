@@ -12,6 +12,9 @@
 ```
 
 ```json
+"title": {
+	"type": "keyword"
+},
 "title_index": {
     "type": "text",
     "analyzer": "gse_analyzer"
@@ -20,7 +23,7 @@
 
 ## Index
 
-Create a new [client](/es/client.go) by [elastic](github.com/olivere/elastic) and config your elasticsearch servers.
+Create a new [client](/es/client.go) by [elastic](https://github.com/olivere/elastic) and config your elasticsearch servers.
 
 ```go
 func (c *Client) data(m map[string]interface{}) map[string]interface{} {
